@@ -2,10 +2,11 @@ from django.db import models
 from author.models import Author
 
 NULLABLE = {"blank": True, "null": True}
+
+
 class Category(models.Model):
     name = models.CharField(max_length=150, verbose_name="Название категории")
     description = models.TextField(verbose_name="Описание категории", **NULLABLE)
-
 
     def __str__(self):
         return f"{self.name}"
@@ -14,6 +15,7 @@ class Category(models.Model):
         verbose_name = "Категория"
         verbose_name_plural = "Категории"
         ordering = ["name"]
+
 
 class Genre(models.Model):
     name = models.CharField(max_length=150, verbose_name="Название жанра")
@@ -45,6 +47,7 @@ class Book(models.Model):
     quantity = models.PositiveSmallIntegerField(verbose_name="Количество книг")
     publication_date = models.DateField(verbose_name="Дата публикации", **NULLABLE)
     publisher = models.CharField(max_length=150, verbose_name="Издатель")
+    cover_image = models.ImageField(upload_to="books/cover_image", verbose_name="Обложка", **NULLABLE)
 
     def __str__(self):
         return f"{self.title} - {self.author}"
