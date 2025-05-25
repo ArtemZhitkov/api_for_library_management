@@ -1,4 +1,5 @@
 import sys
+from datetime import timedelta
 from pathlib import Path
 import os
 from dotenv import load_dotenv
@@ -28,6 +29,8 @@ INSTALLED_APPS = [
 
     "django_filters",
     "rest_framework",
+    "rest_framework_simplejwt",
+
     "users",
     "books",
     "author",
@@ -125,3 +128,17 @@ MEDIA_ROOT = BASE_DIR / "media"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "users.User"
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated",
+    ],
+}
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+}
