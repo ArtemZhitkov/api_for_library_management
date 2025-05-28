@@ -11,6 +11,7 @@ class BookAdmin(admin.ModelAdmin):
         "genre",
         "description",
         "quantity",
+        "available_quantity",
         "publication_date",
         "publisher",
         "cover_image",
@@ -29,6 +30,6 @@ class RentBooksAdmin(admin.ModelAdmin):
         "date_issue",
         "return_date",
         "is_returned",
-        "user",
+        "reader",
         "term",
     )
