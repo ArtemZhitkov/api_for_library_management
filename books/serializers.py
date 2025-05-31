@@ -1,7 +1,10 @@
+from django.utils import timezone
 from rest_framework import serializers
 
-from books.models import Book, Genre, RentBooks
 from author.serializers import AuthorShortSerializers
+from books.models import Book, Genre, RentBooks
+from books.validators import DeadlineValidator
+from users.serializers import UserSerializerForRentBooks
 
 
 class GenreSerializer(serializers.ModelSerializer):
@@ -32,7 +35,17 @@ class BookShortSerializer(serializers.ModelSerializer):
 
 
 class RentBooksSerializer(serializers.ModelSerializer):
-    book = BookShortSerializer(read_only=True)
+    reader = UserSerializerForRentBooks(read_only=True)
+    date_issue = serializers.DateField(read_only=True,
+                                       default=timezone.now)
+
+    class Meta:
+        model = RentBooks
+        fields = "__all__"
+        validators = [DeadlineValidator(start_field="date_issue", end_field="deadline")]
+
+
+class RentBooksUpdateSerializers(serializers.ModelSerializer):
 
     class Meta:
         model = RentBooks
