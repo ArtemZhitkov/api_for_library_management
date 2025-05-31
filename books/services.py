@@ -49,5 +49,5 @@ def send_email(obj):
         "\nОтдел обслуживания читателей"
     )
     from_email = EMAIL_HOST_USER
-    recipient_list = [obj.reader.email]
+    recipient_list = [obj.user.email]
     send_mail(subject, message, from_email, recipient_list)
