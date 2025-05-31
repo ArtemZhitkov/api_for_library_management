@@ -18,6 +18,8 @@ celery = "^5.5.2"
 eventlet = "^0.40.0"
 django-celery-beat = "^2.8.1"
 drf-yasg = "^1.21.10"
+redis = "^6.2.0"
+gunicorn = "^23.0.0"
 
 
 [tool.poetry.group.lint.dependencies]
