@@ -1,0 +1,58 @@
+[
+{
+    "model": "author.author",
+    "pk": 1,
+    "fields": {
+        "first_name": "Test",
+        "last_name": "Tests",
+        "date_of_birth": "2000-01-01",
+        "bio": "test bio",
+        "date_of_death": null,
+        "country": "Россия",
+        "language": "Русский",
+        "photo": ""
+    }
+},
+{
+    "model": "author.author",
+    "pk": 2,
+    "fields": {
+        "first_name": "Лев",
+        "last_name": "Толстой",
+        "date_of_birth": "1828-08-28",
+        "bio": "Русский писатель и мыслитель",
+        "date_of_death": null,
+        "country": "Россия",
+        "language": "русский",
+        "photo": ""
+    }
+},
+{
+    "model": "author.author",
+    "pk": 3,
+    "fields": {
+        "first_name": "Фёдор",
+        "last_name": "Достоевский",
+        "date_of_birth": "1821-11-11",
+        "bio": "Русский писатель и философ",
+        "date_of_death": null,
+        "country": "Россия",
+        "language": "русский",
+        "photo": ""
+    }
+},
+{
+    "model": "author.author",
+    "pk": 4,
+    "fields": {
+        "first_name": "Михаил",
+        "last_name": "Булгаков",
+        "date_of_birth": "1891-05-15",
+        "bio": "Русский писатель и драматург",
+        "date_of_death": null,
+        "country": "Россия",
+        "language": "русский",
+        "photo": ""
+    }
+}
+]
