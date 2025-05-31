@@ -31,7 +31,7 @@ class DeadlineValidator:
         if end_date <= start_date:
             raise ValidationError(
                 {
-                    self.end_field: f"Дата возврата должна быть позже даты выдачи",
-                    self.start_field: f"Дата выдачи должна быть раньше даты возврата",
+                    self.end_field: "Дата возврата должна быть позже даты выдачи",
+                    self.start_field: "Дата выдачи должна быть раньше даты возврата",
                 }
             )
